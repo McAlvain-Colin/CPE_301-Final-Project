@@ -126,10 +126,10 @@ unsigned int data = 0;
 // LCD variables
 const int rs = 12;
 const int en = 11;
-const int d4 = 5;
-const int d5 = 4;
-const int d6 = 3;
-const int d7 = 2;
+const int d4 = 22;
+const int d5 = 23;
+const int d6 = 24;
+const int d7 = 25;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 void setup() {
@@ -153,9 +153,9 @@ void setup() {
   *ddr_h = 0xFF;
   *ddr_L = 0xFF;
   // set ports to input
-  clockHand1Servo.write(90);   
-  clockHand2Servo.write(90);   
-  clockHand3Servo.write(90);   
+  // clockHand1Servo.write(90);   
+  // clockHand2Servo.write(90);   
+  // clockHand3Servo.write(90);   
 
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
@@ -169,20 +169,7 @@ void setup() {
 }
 
 void loop() {
-  // unsigned char cs1;
-  // while (U0kbhit()==0){}; // wait for RDA = true
-  // cs1 = U0getchar();    // read character
-  // U0putchar(cs1);     // echo character
-  // put your main code here, to run repeatedly:
-  // printArmChoice();
-  // unsigned int armChoice = getArmChoice();
 
-  // USART0_Flush();
-
-  // printPositionChoice();
-  // unsigned int positionChoice = getPositionChoice();
-
-  // unsigned int positionChange = getNewHandPostion(armChoice, positionChoice);
   workLight();
 
   printTempChoice();
@@ -434,199 +421,387 @@ void moveHandTemp(){
   unsigned char temp = U0getchar();
   U0putchar(temp);
   if(temp == 'a'){
-      clockHand1Servo.write(hand1[0]/4);              
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 1");
+     
+      clockHand1Servo.write(hand1[0]/4); 
       delay(1000);  
+
   }
 
   else if(temp == 'b'){
-      clockHand1Servo.write(hand1[1]/4);              
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 2");
+     
+      clockHand1Servo.write(hand1[1]/4);           
       delay(1000); 
   }
-
 
   else if(temp == 'c'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 3");
+     
       clockHand1Servo.write(hand1[2]/4);              
-      delay(1000); 
+      delay(1000);
   }
-  
-
 
   else if(temp == 'd'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 4");
+     
       clockHand1Servo.write(hand1[3]/4);              
       delay(1000);  
   }
 
-
   else if(temp == 'e'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 5");
+     
       clockHand1Servo.write(hand1[4]/4);              
       delay(1000); 
   }
 
-
   else if(temp == 'f'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 6");
+     
       clockHand1Servo.write(hand1[5]/4);              
       delay(1000); 
   }
 
-
   else if(temp == 'g'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 7");
+     
       clockHand1Servo.write(hand1[6]/4);              
       delay(1000); 
   }
 
-
   else if(temp == 'h'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 8");
+     
       clockHand1Servo.write(hand1[7]/4);              
       delay(1000); 
   }
 
-
   else if(temp == 'i'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 9");
+     
       clockHand1Servo.write(hand1[8]/4);              
       delay(1000);  
   }
 
   else if(temp == 'j'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 10");
+     
       clockHand1Servo.write(hand1[9]/4);              
       delay(1000); 
   }
 
   else if(temp == 'k'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 11");
+     
       clockHand1Servo.write(hand1[10]/4);              
       delay(1000); 
   }
 
   else if(temp == 'l'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 1");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 12");
+     
       clockHand1Servo.write(hand1[11]/4);              
       delay(1000); 
   }
 
   else if(temp == 'm'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 1");
+     
       clockHand2Servo.write(hand2[0]/4);              
       delay(1000); 
   }
 
   else if(temp == 'n'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 2");
+     
       clockHand2Servo.write(hand2[1]/4);              
       delay(1000);  
   }
 
-
   else if(temp == 'o'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 3");
+     
       clockHand2Servo.write(hand2[2]/4);              
       delay(1000); 
   }
 
   else if(temp == 'p'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 4");
+     
       clockHand2Servo.write(hand2[3]/4);              
       delay(1000); 
   }
 
-
   else if(temp == 'q'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 5");
+     
       clockHand2Servo.write(hand2[4]/4);              
       delay(1000); 
   }
   
   else if(temp == 'r'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 6");
+     
       clockHand2Servo.write(hand2[5]/4);              
       delay(1000); 
   }
 
   else if(temp == 's'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 7");
+     
       clockHand2Servo.write(hand2[6]/4);              
       delay(1000);  
   }
 
   else if(temp == 't'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 8");
+     
       clockHand2Servo.write(hand2[7]/4);              
       delay(1000); 
   }
 
   else if(temp == 'u'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 9");
+     
       clockHand2Servo.write(hand2[8]/4);              
       delay(1000); 
   }
 
   else if(temp == 'v'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 10");
+     
       clockHand2Servo.write(hand2[9]/4);              
       delay(1000); 
   }
 
   else if(temp == 'w'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 11");
+     
       clockHand2Servo.write(hand2[10]/4);              
       delay(1000); 
   }
 
-
   else if(temp == 'x'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 2");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 12");
       clockHand2Servo.write(hand2[11]/4);              
       delay(1000);  
   }
 
-
   else if(temp == 'y'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 1");
       clockHand3Servo.write(hand3[0]/4);              
       delay(1000); 
   }
 
   else if(temp == 'z'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 2");
       clockHand3Servo.write(hand3[1]/4);              
       delay(1000); 
   }
 
-
   else if(temp == '1'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 3");
       clockHand3Servo.write(hand3[2]/4);              
       delay(1000); 
   }
 
-
   else if(temp == '2'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 4");
       clockHand3Servo.write(hand3[3]/4);              
       delay(1000); 
   }
 
-
   else if(temp == '3'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 5");
       clockHand3Servo.write(hand3[4]/4);              
       delay(1000);  
   }
 
-
   else if(temp == '4'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 6");
       clockHand3Servo.write(hand3[5]/4);              
       delay(1000); 
   }
 
   else if(temp == '5'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 7");
       clockHand3Servo.write(hand3[6]/4);              
       delay(1000); 
   }
 
   else if(temp == '6'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 8");
       clockHand3Servo.write(hand3[7]/4);              
       delay(1000); 
   }
 
   else if(temp == '7'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 9");
       clockHand3Servo.write(hand3[8]/4);              
       delay(1000); 
   }
 
-
   else if(temp == '8'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 10");
+     
       clockHand3Servo.write(hand3[9]/4);              
       delay(1000);  
   }
 
   else if(temp == '9'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 11");
+     
       clockHand3Servo.write(hand3[10]/4);              
       delay(1000); 
   }
 
-
   else if(temp == '0'){
+      lcd.clear();
+      //cd.setCursor(1,1);
+      lcd.print("Clock Hand: 3");
+      lcd.setCursor(1,2);
+      lcd.print("Position: 12");
       clockHand3Servo.write(hand3[11]/4);              
       delay(1000);
   }
@@ -778,11 +953,9 @@ void workLight(){
   data = adc_read(1);
   print_int(data);
   if(data > compare){
-    U0putchar('a');
     *port_b |= 0x80;
   }
   else{
-    U0putchar('b');
     *port_b = 0x00;
   }
 }
